@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>uk.co.codezen.maven.it</groupId>
+    <artifactId>undefinedtemplatepath</artifactId>
+    <version>testing</version>
+    <packaging>jar</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>uk.co.codezen</groupId>
+                <artifactId>mvel-maven-plugin</artifactId>
+                <version>@project.version@</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+
+                        <goals>
+                            <goal>render</goal>
+                        </goals>
+
+                        <configuration>
+                            <templates>
+                                <template>
+                                    <templatePath></templatePath>
+                                    <outputPath>src/target/sample.html</outputPath>
+                                </template>
+                            </templates>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
